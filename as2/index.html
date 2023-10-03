@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的網頁</title>
+  <!-- 引入 Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+    /* 自訂 CSS 樣式 */
+    .center-text {
+      text-align: center;
+    }
+
+    .banner-bg {
+      background-color: #B39DB6;
+      /* 標題的背景顏色 */
+      padding: 20px;
+    }
+
+    .section-bg-1 {
+      background-color: #D7A2B6;
+      /* 第一區域的背景顏色 */
+      padding: 20px;
+      height: 100vh;
+      /* 讓第一區域的高度符合整個視窗 */
+    }
+
+    .section-bg-2 {
+      background-color: #B3A2A2;
+      /* 第二區域的背景顏色 */
+      padding: 20px;
+      height: 100vh;
+      /* 讓第二區域的高度符合整個視窗 */
+    }
+
+    .section-bg-3 {
+      background-color: #A2B3B3;
+      /* 第三區域的背景顏色 */
+      padding: 20px;
+      height: 100vh;
+      /* 讓第三區域的高度符合整個視窗 */
+    }
+
+    .custom-section {
+      text-align: center;
+      /* 調整區段的高度 */
+      height: calc(100vh + 100px);
+      /* 調整高度比屏幕高100px */
+      margin-top: 20px;
+      /* 添加上外邊距 */
+      position: relative;
+      /* 使用相對定位 */
+    }
+
+    .outer-wrapper {
+      width: 60%;
+      /* 調整外部包裹元素的寬度 */
+      margin: 0 auto;
+      /* 水平置中 */
+    }
+
+    .inner-wrapper {
+      background-color: transparent;
+      /* 這個包裹元素可以是透明的 */
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .centered-content {
+      text-align: center;
+    }
+
+    /* 調整 inner-content 寬度為畫面寬度的二分之一 */
+    .inner-content {
+      background-color: #ECECEC;
+      padding: 10px;
+      width: calc(50% - 20px);
+      box-sizing: border-box;
+      border-radius: 10px;
+      margin: 0 auto;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    /* 導覽列 */
+    .custom-nav {
+      background-color: rgba(255, 255, 255, 0.9);
+      /* 半透明背景色 */
+    }
+
+    /* 設定導覽列的寬度，使其與內容區域對齊 */
+    .container {
+      max-width: 100%;
+    }
+
+    /* 設定導覽列在滾動時黏在頂部 */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      /* 半透明背景色 */
+    }
+
+    /* 將 title-div 置中在 section 中 */
+    .section-bg-1 .title-div,
+    .section-bg-2 .title-div,
+    .section-bg-3 .title-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* 避免導航列內容切到邊緣 */
+    .navbar-nav {
+      margin-right: 20px;
+      /* 右邊留一些空間 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 置頂的標題 -->
+  <div class="jumbotron text-center center-text banner-bg" id="banner">
+    <h1>歡迎來到我的網頁</h1>
+    <p>這是一個示範網頁</p>
+  </div>
+
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light custom-nav">
+    <a class="navbar-brand" href="#banner" style="padding-left: 20px;">首頁</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#section1">區域 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section2">區域 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section3">區域 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 第一區域 -->
+  <section class="section-bg-1" id="section1">
+    <div class="title-div">
+      <h2 class="center-text">第一區域</h2>
+    </div>
+  </section>
+
+  <!-- 第一區域的第一個子區段 -->
+  <div class="custom-section">
+    <div class="outer-wrapper">
+      <div class="inner-wrapper">
+        <div class="centered-content">
+          <div class="inner-content">
+            <h3 class="title">標題 1</h3>
+            <p>這裡是第一區域的第一個子區段的內文。這裡是第一區域的第一個子區段的內文。這裡是第一區域的第一個子區段的內文。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第二區域 -->
+  <section class="section-bg-2" id="section2">
+    <div class="title-div">
+      <h2 class="center-text">第二區域</h2>
+    </div>
+  </section>
+
+  <!-- 第二區域的第二個子區段 -->
+  <div class="custom-section">
+    <div class="outer-wrapper">
+      <div class="inner-wrapper">
+        <div class="centered-content">
+          <div class="inner-content">
+            <h3 class="title">標題 2</h3>
+            <p>這裡是第二區域的第二個子區段的內文。這裡是第二區域的第二個子區段的內文。這裡是第二區域的第二個子區段的內文。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第三區域 -->
+  <section class="section-bg-3" id="section3">
+    <div class="title-div">
+      <h2 class="center-text">第三區域</h2>
+    </div>
+  </section>
+
+  <!-- 第三區域的第三個子區段 -->
+  <div class="custom-section">
+    <div class="outer-wrapper">
+      <div class="inner-wrapper">
+        <div class="centered-content">
+          <div class="inner-content">
+            <h3 class="title">標題 3</h3>
+            <p>這裡是第三區域的第三個子區段的內文。這裡是第三區域的第三個子區段的內文。這裡是第三區域的第三個子區段的內文。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入 Bootstrap JavaScript（可選） -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    // 平滑滾動效果
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
