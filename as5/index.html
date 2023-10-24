@@ -52,50 +52,43 @@
         </div>
     </div>
 
-    <div  id="endingsection" style="height:100vh; background:rgba(123, 56, 56);">
+    <div id="endingsection" style="height:100vh; background:rgba(123, 56, 56);">
         <h1>Ending section</h1>
     </div> <!-- Ending section -->
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-$(document).ready(function () {
-    const frame1Top = $('#frame').offset().top;
-    const frame1Bottom = frame1Top + $('#frame').outerHeight();
-    
-    const middleTop = $('#middle').offset().top;
-    const middleBottom = middleTop + $('#middle').outerHeight();
-    
-    const frame2Top = $('#frame2').offset().top;
-    const frame2Bottom = frame2Top + $('#frame2').outerHeight();
+        $(document).ready(function () {
+            const frame1Top = $('#frame').offset().top;
+            const frame1Bottom = frame1Top + $('#frame').outerHeight();
 
-    const endingTop = $('#endingsection').offset().top;
-    const endingBottom = endingTop + $('#endingsection').outerHeight();
+            const frame2Top = $('#frame2').offset().top;
+            const frame2Bottom = frame2Top + $('#frame2').outerHeight();
 
-    const videoElement = $('#video').get(0);
-    const video2Element = $('#video2').get(0);
-    const maxScroll = $(document).height() - $(window).height();
+            const video1Element = $('#video').get(0);
+            const video2Element = $('#video2').get(0);
+            const maxScroll = $(document).height() - $(window).height();
 
-    $(window).scroll(function () {
-        const scrollPosition = $(this).scrollTop();
+            $(window).scroll(function () {
+                const scrollPosition = $(this).scrollTop();
 
-        if (scrollPosition >= frame1Top && scrollPosition <= middleTop) {
-            $('#video').get(0).play();
-            videoElement.currentTime = videoElement.duration * (scrollPosition / middleTop);
-        } else if (scrollPosition >= middleTop && scrollPosition <= frame2Top) {
-            $('#video').get(0).play();
-        } else {
-            $('#video').get(0).pause();
-        }
+                if (scrollPosition >= frame1Top && scrollPosition <= frame1Bottom) {
+                    const video1Progress = (scrollPosition - frame1Top) / (frame1Bottom - frame1Top);
+                    $('#video').get(0).currentTime = video1Element.duration * video1Progress;
+                } else {
+                    $('#video').get(0).pause();
+                }
 
-        if (scrollPosition >= frame2Top && scrollPosition <= endingTop) {
-            $('#video2').get(0).play();
-            video2Element.currentTime = video2Element.duration * (scrollPosition / endingTop);
-        } else {
-            $('#video2').get(0).pause();
-        }
-    });
-});
+                if (scrollPosition >= frame2Top && scrollPosition <= frame2Bottom) {
+                    const video2Progress = (scrollPosition - frame2Top) / (frame2Bottom - frame2Top);
+                    $('#video2').get(0).currentTime = video2Element.duration * video2Progress;
+                } else {
+                    $('#video2').get(0).pause();
+                }
+            });
+        });
+
     </script>
 
 
